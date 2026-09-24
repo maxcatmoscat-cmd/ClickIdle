@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Click Idle</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="game">
+
+        <!-- ========================= -->
+        <!-- BACKGROUND -->
+        <!-- ========================= -->
+
+        <div class="background" id="background"></div>
+
+
+        <!-- ========================= -->
+        <!-- CHARACTER -->
+        <!-- ========================= -->
+
+        <div class="character-area">
+
+            <img src="img/idel1.png" class="character" id="character">
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- TOP UI -->
+        <!-- ========================= -->
+
+        <div class="top-ui">
+
+            <div class="game-title">
+                CLICK IDLE
+            </div>
+
+
+            <div class="top-right">
+
+                <div class="money">
+
+                    <img src="img/money.png" class="top-money-icon">
+
+                    <span id="money">
+                        0
+                    </span>
+
+                </div>
+
+
+                <button id="musicButton" class="music-button">
+                    🔊
+                </button>
+
+                <button id="resetGameButton" class="reset-button">
+                    🔄
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- LEFT UI -->
+        <!-- ========================= -->
+
+        <div class="left-ui">
+
+
+            <!-- CHARACTER -->
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    CHARACTER
+                </div>
+
+
+                <div class="level">
+
+                    Lv.
+                    <span id="characterLevel">
+                        1
+                    </span>
+
+                </div>
+
+
+                <div class="exp-bar">
+
+                    <div class="exp-fill" id="expFill"></div>
+
+                </div>
+
+
+                <div class="exp-text">
+
+                    <span>
+                        EXP
+                    </span>
+
+                    <span id="expText">
+                        0 / 100
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLICK -->
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    CLICK
+                </div>
+
+
+                <div class="click-power">
+
+                    +
+                    <span id="clickPower">
+                        1000
+                    </span>
+
+                    <img src="img/money.png" class="money-icon">
+
+                </div>
+
+
+                <button id="upgradeClick">
+                    UPGRADE
+                </button>
+
+
+                <div class="upgrade-price">
+
+                    ราคา:
+                    <span id="clickPrice">
+                        100
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- RIGHT UI -->
+        <!-- ========================= -->
+
+        <div class="right-ui">
+
+
+            <!-- HOUSE -->
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    HOUSE
+                </div>
+
+
+                <div class="level">
+
+                    Lv.
+                    <span id="houseLevel">
+                        1
+                    </span>
+
+                </div>
+
+
+                <div class="house-bonus">
+
+                    +
+                    <span id="houseBonus">
+                        0
+                    </span>
+                    %
+
+                </div>
+
+
+                <button id="upgradeHouse">
+                    UPGRADE
+                </button>
+
+
+                <div class="upgrade-price">
+
+                    ราคา:
+                    <span id="housePrice">
+                        500
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- IDLE -->
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    IDLE
+                </div>
+
+
+                <div class="idle-money">
+
+                    +
+                    <span id="idlePower">
+                        0
+                    </span>
+
+                    / sec
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- BOTTOM UI -->
+        <!-- ========================= -->
+
+        <div class="bottom-ui">
+
+            <div class="bottom-button">
+                🏠
+                <span>HOUSE</span>
+            </div>
+            
+            <div class="bottom-button" id="clickButton">
+                👆
+                <span>CLICK</span>
+            </div>
+            
+            <div class="bottom-button">
+                👤
+                <span>CHARACTER</span>
+            </div>
+            
+            <div class="bottom-button" id="shopButton">
+                🛒
+                <span>SHOP</span>
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- CLICK EFFECT -->
+        <!-- ========================= -->
+
+        <div id="clickEffects"></div>
+
+
+        <!-- ========================= -->
+        <!-- MUSIC -->
+        <!-- ========================= -->
+
+        <audio id="bgm" src="music/Ran Ran Ran dayo, Lucky Star.mp3" loop></audio>
+
+        <!-- ========================= -->
+        <!-- SHOP -->
+        <!-- ========================= -->
+        
+        <div class="shop-screen" id="shopScreen">
+        
+            <div class="shop-box">
+        
+                <div class="shop-header">
+        
+                    <div class="shop-title">
+                        SHOP
+                    </div>
+        
+                    <button id="closeShop" class="close-shop">
+                        ✕
+                    </button>
+        
+                </div>
+        
+        
+                <div class="shop-items" id="shopItems"></div>
+        
+            </div>
+        
+        </div>
+
+        <!-- CLICK SHOP -->
+        <div class="click-screen" id="clickScreen">
+        
+            <div class="click-box">
+        
+                <div class="click-header">
+                    <div class="click-title">CLICK</div>
+        
+                    <button id="closeClick" class="close-click">
+                        ✕
+                    </button>
+                </div>
+        
+                <div class="click-items" id="clickItems"></div>
+        
+            </div>
+        
+        </div>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1224 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body {
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #111;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    user-select: none;
+
+}
+
+
+/* ========================= */
+/* GAME */
+/* ========================= */
+
+.game {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+}
+
+
+/* ========================= */
+/* BACKGROUND */
+/* ========================= */
+
+.background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background-image:
+        url("img/back1.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transition:
+        background-image 0.3s ease;
+
+}
+
+
+/* ========================= */
+/* CHARACTER */
+/* ========================= */
+
+.character-area {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.character {
+
+    width: 90%;
+    height: 110%;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.1s;
+
+}
+
+
+.character.click {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+/* ========================= */
+/* TOP UI */
+/* ========================= */
+
+.top-ui {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 0;
+    right: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    padding:
+        0 30px;
+
+    pointer-events: none;
+
+}
+
+
+.game-title {
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 3px 10px black;
+
+}
+
+
+/* ========================= */
+/* TOP RIGHT */
+/* ========================= */
+
+.top-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    pointer-events: auto;
+
+}
+
+
+/* ========================= */
+/* MONEY */
+/* ========================= */
+
+.money {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    padding:
+        12px 25px;
+
+    border-radius: 30px;
+
+    color: #ffd84d;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.2);
+
+}
+
+
+.top-money-icon {
+
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+}
+
+
+/* ========================= */
+/* MUSIC BUTTON */
+/* ========================= */
+
+.music-button {
+
+    pointer-events: auto;
+
+    position: relative;
+
+    z-index: 10000;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color: white;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition:
+        0.15s;
+
+}
+
+
+.music-button:hover {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+.music-button:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+
+/* ========================= */
+/* LEFT / RIGHT UI */
+/* ========================= */
+
+.left-ui,
+.right-ui {
+
+    position: absolute;
+
+    top: 100px;
+
+    width: 25%;
+
+    z-index: 20;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.left-ui {
+
+    left: 25px;
+
+}
+
+
+.right-ui {
+
+    right: 25px;
+
+}
+
+
+/* ========================= */
+/* PANEL */
+/* ========================= */
+
+.panel {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* ========================= */
+/* PANEL TITLE */
+/* ========================= */
+
+.panel-title {
+
+    font-size: 14px;
+
+    opacity: 0.7;
+
+    margin-bottom: 5px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ========================= */
+/* LEVEL */
+/* ========================= */
+
+.level {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+
+/* ========================= */
+/* CLICK POWER */
+/* ========================= */
+
+.click-power {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 32px;
+
+    color: #ffd84d;
+
+    margin: 10px 0;
+
+}
+
+
+.money-icon {
+
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+}
+
+
+/* ========================= */
+/* EXP BAR */
+/* ========================= */
+
+.exp-bar {
+
+    width: 100%;
+
+    height: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+
+}
+
+
+.exp-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #64d8ff;
+
+    transition:
+        width 0.2s;
+
+}
+
+
+/* ========================= */
+/* EXP TEXT */
+/* ========================= */
+
+.exp-text {
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+}
+
+
+/* ========================= */
+/* HOUSE */
+/* ========================= */
+
+.house-bonus {
+
+    color: #6cff8c;
+
+    font-size: 25px;
+
+    margin: 5px 0;
+
+}
+
+
+/* ========================= */
+/* IDLE */
+/* ========================= */
+
+.idle-money {
+
+    font-size: 25px;
+
+    color: #6cff8c;
+
+}
+
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    background: white;
+
+    color: #111;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        0.15s;
+
+}
+
+
+button:hover {
+
+    transform:
+        scale(1.03);
+
+}
+
+
+button:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+/* ========================= */
+/* PRICE */
+/* ========================= */
+
+.upgrade-price {
+
+    text-align: center;
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    opacity: 0.6;
+
+}
+
+
+/* ========================= */
+/* BOTTOM UI */
+/* ========================= */
+
+.bottom-ui {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 30;
+
+    display: flex;
+
+    gap: 10px;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    padding: 8px;
+
+    border-radius: 20px;
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* ========================= */
+/* BOTTOM BUTTON */
+/* ========================= */
+
+.bottom-button {
+
+    min-width: 80px;
+
+    padding: 10px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    transition:
+        0.15s;
+
+}
+
+
+.bottom-button span {
+
+    display: block;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+}
+
+
+.bottom-button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+}
+
+
+/* ========================= */
+/* CLICK EFFECT */
+/* ========================= */
+
+#clickEffects {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+}
+
+
+.money-effect {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #ffe45c;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 2px 5px black;
+
+    pointer-events: none;
+
+    animation:
+        moneyUp 0.7s forwards;
+
+}
+
+
+.money-effect img {
+
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+}
+
+
+@keyframes moneyUp {
+
+    0% {
+
+        transform:
+            translateY(0) scale(1);
+
+        opacity: 1;
+
+    }
+
+
+    70% {
+
+        transform:
+            translateY(-35px) scale(1.05);
+
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform:
+            translateY(-55px) scale(1);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 800px) {
+
+    .left-ui,
+    .right-ui {
+
+        width: 30%;
+
+    }
+
+
+    .panel {
+
+        padding: 10px;
+
+    }
+
+
+    .game-title {
+
+        font-size: 20px;
+
+    }
+
+
+    .money {
+
+        font-size: 16px;
+
+        padding:
+            8px 15px;
+
+    }
+
+
+    .top-money-icon {
+
+        width: 22px;
+        height: 22px;
+
+    }
+
+
+    .music-button {
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+
+    }
+
+}
+
+/* ========================= */
+/* SHOP SCREEN */
+/* ========================= */
+
+.shop-screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 200;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+
+.shop-screen.active {
+
+    display: flex;
+
+}
+
+
+/* ========================= */
+/* SHOP BOX */
+/* ========================= */
+
+.shop-box {
+
+    width: 800px;
+
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    background:
+        rgba(20, 20, 20, 0.95);
+
+    border:
+        2px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    color: white;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6);
+
+    overflow: hidden;
+
+}
+
+
+/* ========================= */
+/* SHOP HEADER */
+/* ========================= */
+
+.shop-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.shop-title {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
+
+
+.close-shop {
+
+    width: 45px;
+
+    height: 45px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 20px;
+
+}
+
+
+/* ========================= */
+/* SHOP ITEMS */
+/* ========================= */
+
+.shop-items {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    max-height: 65vh;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+
+}
+
+
+/* ========================= */
+/* SHOP ITEM */
+/* ========================= */
+
+.shop-item {
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    transition:
+        0.15s;
+
+}
+
+
+.shop-item:hover {
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.shop-item-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.shop-item-icon {
+
+    font-size: 40px;
+
+}
+
+
+.shop-item-name {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+}
+
+
+.shop-item-description {
+
+    font-size: 12px;
+
+    opacity: 0.6;
+
+    margin-top: 3px;
+
+}
+
+
+.shop-item-stats {
+
+    margin-top: 12px;
+
+    color: #6cff8c;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.shop-item-price {
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+
+}
+
+
+.shop-item button {
+
+    margin-top: 12px;
+
+}
+
+
+.shop-item button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 800px) {
+
+    .shop-items {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .shop-box {
+
+        padding: 15px;
+
+    }
+
+}
+
+/* =========================
+   CLICK SHOP
+========================= */
+
+.click-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 300;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+.click-screen.active {
+    display: flex;
+}
+
+.click-box {
+    width: 800px;
+    max-width: 90vw;
+    max-height: 85vh;
+
+    background: rgba(20, 20, 20, 0.96);
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+
+    padding: 25px;
+
+    color: white;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    overflow: hidden;
+}
+
+.click-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.click-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.close-click {
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    font-size: 20px;
+}
+
+.click-items {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    max-height: 65vh;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+.click-item {
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    padding: 18px;
+}
+
+.click-item-top {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.click-item-icon {
+    font-size: 40px;
+}
+
+.click-item-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.click-item-description {
+    font-size: 12px;
+
+    opacity: 0.6;
+
+    margin-top: 3px;
+}
+
+.click-item-stats {
+    margin-top: 12px;
+
+    color: #6cff8c;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    line-height: 1.6;
+}
+
+.click-item-price {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+}
+
+.click-item button {
+    margin-top: 12px;
+
+    width: 100%;
+}
+
+.click-item button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+@media (max-width: 800px) {
+
+    .click-items {
+        grid-template-columns: 1fr;
+    }
+
+    .click-box {
+        padding: 15px;
+    }
+}
+
+.reset-button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.reset-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
